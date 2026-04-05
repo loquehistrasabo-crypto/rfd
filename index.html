@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whitelist Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Roblox Whitelist Manager</h1>
+        
+        <div class="add-section">
+            <input type="text" id="usernameInput" placeholder="Enter Roblox Username">
+            <button onclick="addUser()">Add User</button>
+        </div>
+
+        <div class="stats">
+            <p>Total Whitelisted: <span id="count">0</span></p>
+        </div>
+
+        <div class="list-section">
+            <h2>Whitelisted Users</h2>
+            <div id="userList"></div>
+        </div>
+
+        <div class="export-section">
+            <button onclick="exportList()">Export as JSON</button>
+            <button onclick="copyLuaTable()">Copy Lua Table</button>
+        </div>
+
+        <div class="output">
+            <textarea id="output" readonly placeholder="Export output will appear here..."></textarea>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
