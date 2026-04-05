@@ -67,6 +67,17 @@ function exportList() {
     output.value = JSON.stringify(whitelist, null, 2);
 }
 
+// Download JSON file
+function downloadJSON() {
+    const blob = new Blob([JSON.stringify(whitelist, null, 2)], {type: 'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'whitelist.json';
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
 // Copy as Lua table
 function copyLuaTable() {
     const output = document.getElementById('output');
